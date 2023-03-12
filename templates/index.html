@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+  <title>FitGPT</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='FitGPT.png') }}"
+  />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+  <img src="{{ url_for('static', filename='FitGPT.png') }}" class="icon" />
+  <h3>FitGPT</h3>
+  <form action="/" method="post">
+    <input type="text" name="fitness" placeholder="Ask a question" required />
+    <input type="submit" value="Submit" />
+  </form>
+  {% if result %}
+  <div class="result">{{ result }}</div>
+  {% endif %}
+  <h4>Past Responses:</h4>
+  <ul>
+  {% for response in responses %}
+    <li>{{ response }}</li>
+  {% endfor %}
+  </ul>
+</body>
