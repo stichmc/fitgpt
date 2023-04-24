@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <head>
   <title>FitGPT</title>
-  <link
-    rel="shortcut icon"
-    href="{{ url_for('static', filename='FitGPT.png') }}"
-  />
-  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+  <link rel="shortcut icon" href="{{ url_for('static', filename='FitGPT.png') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  <style>
+    .answer-box {
+      border: 1px solid gray;
+      padding: 10px;
+      margin-top: 20px;
+    }
+    .answer {
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
-  <img src="{{ url_for('static', filename='FitGPT.png') }}" class="icon" />
-  <h3>FitGPT</h3>
+  <img src="{{ url_for('static', filename='FitGPT.png') }}" class="icon">
   <form action="/" method="post">
-    <input type="text" name="fitness" placeholder="Ask a question" required />
-    <input type="submit" value="Submit" />
+    <input type="text" name="fitness" placeholder="Ask a question" required>
+    <input type="submit" value="Submit">
   </form>
-  {% if result %}
-  <div class="result">{{ result }}</div>
-  {% endif %}
+  <div class="answer-box">
+    {% if result %}
+      <div class="answer">{{ result }}</div>
+    {% endif %}
+  </div>
   <h4>Past Responses:</h4>
-  <ul>
-  {% for response in responses %}
-    <li>{{ response }}</li>
-  {% endfor %}
-  </ul>
+  <div class="responses">
+    <ul>
+      {% for response in responses[::-1] %}
+        <li>{{ response }}</li>
+      {% endfor %}
+    </ul>
+  </div>
 </body>
