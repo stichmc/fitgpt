@@ -1,6 +1,6 @@
 # FitGPT - Personalized Health Recommendations
 
-FitGPT is a website that integrates with OpenAI's ChatGPT artificial intelligence language model to provide personalized dietary and workout recommendations for users. Our design challenge is to effictly train the artificial intelligence language model to accuratly generate concise and accurate recommendations to improve personal health.
+FitGPT is a website that integrates with OpenAI's ChatGPT artificial intelligence language model to provide personalized dietary and workout recommendations for users. Our design challenge is efficiently training the artificial intelligence language model to generate concise and accurate recommendations to improve personal health.
 
 ## Features
 
